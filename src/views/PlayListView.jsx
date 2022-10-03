@@ -4,6 +4,7 @@ import { spotifyService } from '@/services/spotify.service'
 import { formatDate, msToMin } from '@/utils/format'
 import { SET_ACTIVE_SONG } from '@/app/global'
 import { useDispatch } from 'react-redux'
+import { Loading } from '@/components/Loading'
 const PlayListView = () => {
   const dispatch = useDispatch()
   const { id } = useParams()
@@ -21,7 +22,7 @@ const PlayListView = () => {
 
   return loading
     ? (
-    <div className="text-white">Loading...</div>
+      <Loading />
       )
     : (
     <div
