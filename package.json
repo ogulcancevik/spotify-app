@@ -11,12 +11,16 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.5",
     "axios": "^0.27.2",
+    "dayjs": "^1.11.5",
     "eslint": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-redux": "^8.0.4",
-    "react-router-dom": "6"
+    "react-router-dom": "6",
+    "react-spotify-web-playback": "^0.10.0",
+    "react-spotify-web-playback-sdk": "^3.0.1",
+    "spotify-web-api-node": "^5.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.15",

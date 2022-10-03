@@ -12,7 +12,16 @@ const LoginView = () => {
       'user-read-playback-state',
       'user-read-currently-playing',
       'user-read-recently-played',
-      'user-top-read'
+      'user-top-read',
+      'playlist-read-private',
+      'playlist-read-collaborative',
+      'playlist-modify-public',
+      'playlist-modify-private',
+      'user-library-read',
+      'user-library-modify',
+      'user-follow-read',
+      'app-remote-control',
+      'streaming'
     ]
     window.location.href = `${apiUrl}?client_id=${clientId}&redirect_uri=${redirectUrl}&scope=${scope.join(
       ' '

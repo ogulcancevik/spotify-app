@@ -9,7 +9,8 @@ api.interceptors.response.use(undefined, (error) => {
 
   if (statusCode === 401) {
     // logout user
-    console.log('logout user')
+    localStorage.removeItem('token')
+    window.location.href = '/'
   }
 
   if (statusCode >= 500) {
