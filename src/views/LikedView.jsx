@@ -3,7 +3,7 @@ import { AiFillHeart } from 'react-icons/ai'
 import { spotifyService } from '@/services/spotify.service'
 import { Loading } from '@/components/Loading'
 import { ClipLoader, ScaleLoader } from 'react-spinners'
-import { SET_ACTIVE_SONG } from '@/app/global'
+import { SET_ACTIVE_SONG } from '@/app/spotify'
 import { useDispatch } from 'react-redux'
 const LikedView = () => {
   const dispatch = useDispatch()

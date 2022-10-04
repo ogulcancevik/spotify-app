@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { SET_USER_DATA, SET_USER_PLAYLIST } from '@/app/global'
+import { SET_USER_DATA, SET_USER_PLAYLIST } from '@/app/spotify'
 import { spotifyService } from '@/services/spotify.service'
 import { useDispatch } from 'react-redux'
 import { Navigate } from 'react-router-dom'

@@ -1,7 +1,7 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import global from './global'
+import spotify from './spotify'
 const reducer = combineReducers({
-  global
+  spotify
 })
 const store = configureStore({
   reducer

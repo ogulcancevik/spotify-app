@@ -1,11 +1,11 @@
-import { SET_ACTIVE_SONG } from '@/app/global'
+import { SET_ACTIVE_SONG } from '@/app/spotify'
 import { spotifyService } from '@/services/spotify.service'
 import React, { useEffect, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import SpotifyPlayer from 'react-spotify-web-playback'
 const Footer = () => {
   const dispatch = useDispatch()
-  const { activeSong } = useSelector(state => state.global)
+  const { activeSong } = useSelector(state => state.spotify)
   const fetchCurrentPlayingTrack = async () => {
     const data = await spotifyService.getCurrentPlayingTrack()
     dispatch(SET_ACTIVE_SONG(data?.item?.uri))

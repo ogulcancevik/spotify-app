@@ -1,4 +1,4 @@
-import { SET_ACTIVE_SONG } from '@/app/global'
+import { SET_ACTIVE_SONG } from '@/app/spotify'
 import { spotifyService } from '@/services/spotify.service'
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'

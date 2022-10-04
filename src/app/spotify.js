@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export const userSlice = createSlice({
-  name: 'user',
+export const spotifySlice = createSlice({
+  name: 'spotify',
   initialState: {
     userData: null,
     userPlaylist: null,
@@ -35,5 +35,5 @@ export const userSlice = createSlice({
   }
 })
 
-export const { SET_USER_DATA, SET_USER_PLAYLIST, SET_SELECTED_PLAYLIST, SET_ACTIVE_SONG, SET_LIKED_SONG } = userSlice.actions
-export default userSlice.reducer
+export const { SET_USER_DATA, SET_USER_PLAYLIST, SET_SELECTED_PLAYLIST, SET_ACTIVE_SONG, SET_LIKED_SONG } = spotifySlice.actions
+export default spotifySlice.reducer

@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import useOnClickOutside from '@/hooks/useOnClickOutside'
 
 const Navbar = () => {
-  const { userData } = useSelector((state) => state.global)
+  const { userData } = useSelector((state) => state.spotify)
   const [userMenuShown, setUserMenuShown] = useState(false)
   const [profilePic, setProfilePic] = useState('')
 

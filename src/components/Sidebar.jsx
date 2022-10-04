@@ -1,4 +1,4 @@
-import { SET_SELECTED_PLAYLIST } from '@/app/global'
+import { SET_SELECTED_PLAYLIST } from '@/app/spotify'
 import React from 'react'
 import { AiFillHome, AiFillHeart } from 'react-icons/ai'
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 const Sidebar = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const userPlayList = useSelector((state) => state.global.userPlaylist)
+  const userPlayList = useSelector((state) => state.spotify.userPlaylist)
   return (
     <div
       className="w-64 flex flex-col items-center text-gray-300 rounded-xl ml-1"
