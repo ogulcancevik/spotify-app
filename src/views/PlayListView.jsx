@@ -5,6 +5,7 @@ import { formatDate, msToMin } from '@/utils/format'
 import { SET_ACTIVE_SONG } from '@/app/global'
 import { useDispatch } from 'react-redux'
 import { Loading } from '@/components/Loading'
+import { ClipLoader } from 'react-spinners'
 const PlayListView = () => {
   const dispatch = useDispatch()
   const { id } = useParams()
@@ -22,7 +23,10 @@ const PlayListView = () => {
 
   return loading
     ? (
-      <Loading />
+      <div style={{
+        height: 'calc(100vh - 125px)',
+        width: '100%'
+      }}><Loading LoaderComponent={ClipLoader} /></div>
       )
     : (
     <div

@@ -4,7 +4,6 @@ import { spotifyService } from '@/services/spotify.service'
 import { useDispatch } from 'react-redux'
 import { Navigate } from 'react-router-dom'
 
-// eslint-disable-next-line react/prop-types
 const PrivateRoute = ({ Component }) => {
   const dispatch = useDispatch()
   const getUserData = async () => {

@@ -6,7 +6,11 @@ export const userSlice = createSlice({
     userData: null,
     userPlaylist: null,
     selectedPlayList: null,
-    activeSong: null
+    activeSong: null,
+    likedSong: {
+      items: [],
+      total: 0
+    }
   },
   reducers: {
     SET_USER_DATA: (state, action) => {
@@ -20,9 +24,16 @@ export const userSlice = createSlice({
     },
     SET_ACTIVE_SONG: (state, action) => {
       state.activeSong = action.payload
+    },
+    SET_LIKED_SONG: (state, action) => {
+      const { items, total } = action.payload
+      state.likedSong = {
+        items,
+        total
+      }
     }
   }
 })
 
-export const { SET_USER_DATA, SET_USER_PLAYLIST, SET_SELECTED_PLAYLIST, SET_ACTIVE_SONG } = userSlice.actions
+export const { SET_USER_DATA, SET_USER_PLAYLIST, SET_SELECTED_PLAYLIST, SET_ACTIVE_SONG, SET_LIKED_SONG } = userSlice.actions
 export default userSlice.reducer

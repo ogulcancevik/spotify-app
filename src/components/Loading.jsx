@@ -1,19 +1,9 @@
 import React from 'react'
 
-export const Loading = () => {
+export const Loading = ({ LoaderComponent }) => {
   return (
-    <div
-      className="w-full flex justify-center items-center"
-      style={{
-        height: 'calc(100vh - 125px)'
-      }}
-    >
-      <div className="lds-ring">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+    <div className="flex justify-center items-center h-full w-full">
+      <LoaderComponent color="white" />
     </div>
   )
 }

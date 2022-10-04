@@ -17,7 +17,7 @@ const Footer = () => {
     return [activeSong]
   }, [activeSong])
   return (
-    <div className="absolute bottom-0 w-full">
+    <div className="absolute bottom-0 w-full rounded-lg px-1.5">
       <SpotifyPlayer
         name="Spotify With React (Oğulcan ÇEVİK)"
         token={localStorage.getItem('token')}

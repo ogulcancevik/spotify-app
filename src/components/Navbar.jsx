@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { FaSpotify } from 'react-icons/fa'
 import { AiFillHome } from 'react-icons/ai'
 import { BsSearch } from 'react-icons/bs'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import useOnClickOutside from '@/hooks/useOnClickOutside'
 
 const Navbar = () => {
   const { userData } = useSelector((state) => state.global)
   const [userMenuShown, setUserMenuShown] = useState(false)
   const [profilePic, setProfilePic] = useState('')
+
+  const userMenuRef = useRef(null)
+  useOnClickOutside(userMenuRef, () => setUserMenuShown(false))
   useEffect(() => {
     setProfilePic(userData?.images[0].url)
   }, [userData])
@@ -39,7 +43,7 @@ const Navbar = () => {
           />
         )}
       </div>
-      {userMenuShown && <UserMenu />}
+      {userMenuShown && <UserMenu userMenuRef={userMenuRef} />}
     </div>
   )
 }
@@ -93,15 +97,16 @@ const SearchBar = () => {
   )
 }
 
-const UserMenu = () => {
+const UserMenu = ({ userMenuRef }) => {
   return (
     <div
-      className="absolute rounded-lg right-0 flex p-5 text-white"
+      className="absolute rounded-lg right-0 p-3.5 text-white flex justify-center items-center"
       style={{
         background: '#282828',
-        marginTop: '130px',
-        width: '196px'
+        marginTop: '120px',
+        width: '90px'
       }}
+      ref={userMenuRef}
     >
       <ul>
         <li

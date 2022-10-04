@@ -16,6 +16,10 @@ const getPlayList = async (id) => {
   return await data
 }
 
+const getLikedSongs = async (offset = 0) => {
+  const { data } = await api.get(`/me/tracks?limit=50&offset=${offset}`)
+  return await data
+}
 const search = async (query) => {
   const { data } = await api.get(`/search?q=${query}&type=track`)
   return await data
@@ -65,5 +69,6 @@ export const spotifyService = {
   pause,
   transferPlayback,
   getAvaibleDevices,
-  playBackState
+  playBackState,
+  getLikedSongs
 }

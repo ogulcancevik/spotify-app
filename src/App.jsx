@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import PrivateRoute from './components/PrivateRoute'
 import Sidebar from './components/Sidebar'
 import HomeView from './views/HomeView'
+import LikedView from './views/LikedView'
 import LoginView from './views/LoginView'
 import PlayListView from './views/PlayListView'
 import SearchView from './views/SearchView'
@@ -49,6 +50,10 @@ const App = () => {
             <Route
               path="/search/:query"
               element={<PrivateRoute Component={SearchView} />}
+            />
+            <Route
+              path="/collection/tracks"
+              element={<PrivateRoute Component={LikedView} />}
             />
           </Routes>
         </div>
