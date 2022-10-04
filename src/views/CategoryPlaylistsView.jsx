@@ -1,17 +1,17 @@
 import { spotifyService } from '@/services/spotify.service'
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
-const HomeView = () => {
+const CategoryPlaylistsView = () => {
+  const { id } = useParams()
   const navigate = useNavigate()
-  const [categories, setCategories] = useState({})
-  const fetchSeveralCategories = async () => {
-    const data = await spotifyService.getSeveralCategories()
-    setCategories(data)
-  }
+  const [playlists, setPlaylists] = useState([])
   useEffect(() => {
-    fetchSeveralCategories()
-  }, [])
+    (async () => {
+      const data = await spotifyService.getCategoryPlaylists(id)
+      setPlaylists(data.items)
+    })()
+  })
   return (
     <div
       className="w-full rounded-xl ml-2 overflow-auto p-8"
@@ -21,16 +21,16 @@ const HomeView = () => {
       }}
     >
       <div className="grid grid-cols-5 gap-5">
-        {categories?.items?.map(({ id, name, icons }) => {
+        {playlists?.map(({ id, name, images }) => {
           return (
             <div
               className="flex justify-center items-center flex-col text-white cursor-pointer"
               key={id}
-              onClick={async () => {
-                navigate(`/category/playlist/${id}`)
+              onClick={() => {
+                navigate(`/playlist/${id}`)
               }}
             >
-              <img src={icons[0].url} alt="category_image" />
+              <img src={images[0].url} alt="category_image" />
               <div className="mt-2">{name}</div>
             </div>
           )
@@ -40,4 +40,4 @@ const HomeView = () => {
   )
 }
 
-export default HomeView
+export default CategoryPlaylistsView

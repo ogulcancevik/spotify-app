@@ -45,7 +45,7 @@ const LikedView = () => {
     >
       {loading
         ? (
-        <Loading LoaderComponent={ClipLoader} />
+          <Loading LoaderComponent={ClipLoader} />
           )
         : (
         <>
@@ -90,7 +90,7 @@ const LikedView = () => {
               )
             })}
           </div>
-          {scrollLoading && <ScaleLoader color="white" />}
+          {scrollLoading && <ScaleLoader color='white'/>}
         </>
           )}
     </div>

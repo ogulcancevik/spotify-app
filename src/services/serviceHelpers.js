@@ -14,15 +14,11 @@ api.interceptors.response.use(undefined, (error) => {
   }
 
   if (statusCode >= 500) {
-    // show server error
-    console.log('show server error')
+    // handle server error
   }
 
   if (statusCode === 400) {
-    // show bad request error
-    const { message } = error.response.data
-    console.log(message)
+    // handle bad request
   }
-
   return Promise.reject(error)
 })

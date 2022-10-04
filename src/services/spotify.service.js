@@ -24,9 +24,14 @@ const search = async (query) => {
   const { data } = await api.get(`/search?q=${query}&type=track`)
   return await data
 }
-const getSeveralCategories = async (ids) => {
+const getSeveralCategories = async () => {
   const { data } = await api.get('/browse/categories')
   return await data.categories
+}
+
+const getCategoryPlaylists = async (id) => {
+  const { data } = await api.get(`/browse/categories/${id}/playlists`)
+  return await data.playlists
 }
 
 const getCurrentPlayingTrack = async () => {
@@ -64,6 +69,7 @@ export const spotifyService = {
   getPlayList,
   search,
   getSeveralCategories,
+  getCategoryPlaylists,
   getCurrentPlayingTrack,
   start,
   pause,

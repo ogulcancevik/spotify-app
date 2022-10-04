@@ -1,7 +1,6 @@
 import { SET_SELECTED_PLAYLIST } from '@/app/global'
 import React from 'react'
 import { AiFillHome, AiFillHeart } from 'react-icons/ai'
-import { BiLibrary } from 'react-icons/bi'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
@@ -18,7 +17,7 @@ const Sidebar = () => {
       }}
     >
       <div className="flex items-center w-full px-4 mt-6">
-        <ul className="flex flex-col justify-around h-32">
+        <ul className="flex flex-col justify-around h-24">
           <li
             className="flex items-center cursor-pointer hover:text-white"
             onClick={() => {
@@ -34,9 +33,6 @@ const Sidebar = () => {
             }}
           >
             <AiFillHeart className="mr-3 text-xl" /> Liked Songs
-          </li>
-          <li className="flex items-center cursor-pointer hover:text-white">
-            <BiLibrary className="mr-3 text-xl" /> Your Library
           </li>
         </ul>
       </div>

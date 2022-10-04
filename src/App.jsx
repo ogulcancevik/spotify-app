@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import PrivateRoute from './components/PrivateRoute'
 import Sidebar from './components/Sidebar'
+import CategoryPlaylistsView from './views/CategoryPlaylistsView'
 import HomeView from './views/HomeView'
 import LikedView from './views/LikedView'
 import LoginView from './views/LoginView'
@@ -54,6 +55,10 @@ const App = () => {
             <Route
               path="/collection/tracks"
               element={<PrivateRoute Component={LikedView} />}
+            />
+            <Route
+              path="/category/playlist/:id"
+              element={<PrivateRoute Component={CategoryPlaylistsView} />}
             />
           </Routes>
         </div>
