@@ -30,7 +30,7 @@ const LoginView = () => {
   return (
     <div className="bg-black h-screen w-screen flex items-center justify-center flex-col">
       <div className="w-5/12">
-        <img src="public/images/spotify_logo.png" alt="spotify logo" />
+        <img src="./public/images/spotify_logo.png" alt="spotify logo" />
       </div>
       <div
         className="p-5 rounded-full px-12 font-medium cursor-pointer"
