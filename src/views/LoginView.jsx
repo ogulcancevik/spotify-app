@@ -3,7 +3,9 @@ import React from 'react'
 const LoginView = () => {
   const handleLogin = () => {
     const clientId = 'ef9a15f18952414e9e116886aac229e7'
-    const redirectUrl = 'http://127.0.0.1:5173/login'
+    const redirectUrl = 'https://spotify-clone-ogulcancevik.netlify.app'
+    // if you are using localhost, use this redirect url
+    // const devRedirectUrl = 'http://127.0.0.1:5173/login'
     const apiUrl = 'https://accounts.spotify.com/authorize'
     const scope = [
       'user-read-private',
